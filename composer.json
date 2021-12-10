@@ -1,0 +1,30 @@
+{
+    "name": "elephox/psr-7",
+    "description": "The PSR-7 adapter for Elephox.",
+    "type": "library",
+    "require": {
+        "elephox/http": "dev-main",
+        "psr/http-message": "^1.0",
+        "ergebnis/composer-normalize": "^2.18"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Elephox\\Psr7\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ricardo Boss",
+            "email": "contact@ricardoboss.de"
+        }
+    ],
+    "provide": {
+        "psr/http-message-implementation": "1.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
