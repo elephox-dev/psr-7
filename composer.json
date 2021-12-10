@@ -3,6 +3,7 @@
     "description": "The PSR-7 adapter for Elephox.",
     "type": "library",
     "require": {
+        "php": ">=8.1",
         "elephox/http": "dev-main",
         "psr/http-message": "^1.0",
         "ergebnis/composer-normalize": "^2.18"
