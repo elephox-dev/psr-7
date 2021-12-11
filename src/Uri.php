@@ -5,52 +5,78 @@ namespace Elephox\Psr7;
 
 use Elephox\Http\Contract\Url as ElephoxUrl;
 use Elephox\Http\CustomUrlScheme;
+use Elephox\Http\Url;
 use Elephox\Http\UrlScheme;
+use JetBrains\PhpStorm\Pure;
 use Psr\Http\Message\UriInterface as Psr7Uri;
 
 class Uri implements Psr7Uri
 {
-    public function __construct(
+    #[Pure] public static function toElephox(Psr7Uri $uri): ElephoxUrl
+    {
+        $original = (string)$uri;
+        $scheme = $uri->getScheme();
+        [$username, $password] = explode(':', $uri->getUserInfo(), 2) + [1 => ''];
+        $host = $uri->getHost();
+        $port = $uri->getPort();
+        $path = $uri->getPath();
+        $query = $uri->getQuery();
+        $fragment = $uri->getFragment();
+
+        return new Url(
+            $original,
+            empty($scheme) ? null : $scheme,
+            empty($username) ? null : $username,
+            empty($password) ? null : $password,
+            empty($host) ? null : $host,
+            $port,
+            $path,
+            empty($query) ? null : $query,
+            empty($fragment) ? null : $fragment
+        );
+    }
+
+    #[Pure] public function __construct(
         protected ElephoxUrl $url
     ) {
     }
 
-    public function getScheme()
+    #[Pure] public function getScheme()
     {
         return $this->url->getUrlScheme()->value;
     }
 
-    public function getAuthority()
+    #[Pure] public function getAuthority()
     {
         return $this->url->getAuthority();
     }
 
-    public function getUserInfo()
+    #[Pure] public function getUserInfo()
     {
         return $this->url->getUserInfo();
     }
 
-    public function getHost()
+    #[Pure] public function getHost()
     {
         return $this->url->getHost();
     }
 
-    public function getPort()
+    #[Pure] public function getPort()
     {
         return $this->url->getPort();
     }
 
-    public function getPath()
+    #[Pure] public function getPath()
     {
         return $this->url->getPath();
     }
 
-    public function getQuery()
+    #[Pure] public function getQuery()
     {
         return $this->url->getQuery();
     }
 
-    public function getFragment()
+    #[Pure] public function getFragment()
     {
         return $this->url->getFragment();
     }
@@ -65,32 +91,32 @@ class Uri implements Psr7Uri
 
     public function withUserInfo($user, $password = null)
     {
-        // TODO: Implement withUserInfo() method.
+        return $this->url->withUserInfo($user, $password);
     }
 
     public function withHost($host)
     {
-        // TODO: Implement withHost() method.
+        return $this->url->withHost($host);
     }
 
     public function withPort($port)
     {
-        // TODO: Implement withPort() method.
+        return $this->url->withPort($port);
     }
 
     public function withPath($path)
     {
-        // TODO: Implement withPath() method.
+        return $this->url->withPath($path);
     }
 
     public function withQuery($query)
     {
-        // TODO: Implement withQuery() method.
+        return $this->url->withQuery($query);
     }
 
     public function withFragment($fragment)
     {
-        // TODO: Implement withFragment() method.
+        return $this->url->withFragment($fragment);
     }
 
     public function __toString()

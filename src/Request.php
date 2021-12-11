@@ -6,28 +6,57 @@ namespace Elephox\Psr7;
 use Elephox\Http\Contract\Request as ElephoxRequest;
 use Elephox\Http\CustomRequestMethod;
 use Elephox\Http\RequestMethod;
-use Psr\Http\Message\RequestInterface;
+use Elephox\Http\Url;
+use InvalidArgumentException;
+use JetBrains\PhpStorm\Pure;
+use Psr\Http\Message\RequestInterface as Psr7Request;
 use Psr\Http\Message\UriInterface;
 
-class Request extends Message implements RequestInterface
+class Request extends Message implements Psr7Request
 {
-    public function __construct(
+    #[Pure] public function __construct(
         protected ElephoxRequest $request
     ) {
         parent::__construct($request);
     }
 
-    public function getRequestTarget()
+    #[Pure] public function getRequestTarget()
     {
-        // TODO: Implement getRequestTarget() method.
+        $path = $this->request->getUrl()->getPath();
+        $query = $this->request->getUrl()->getQuery();
+        $fragment = $this->request->getUrl()->getFragment();
+
+        if (empty($path)) {
+            $path = "/";
+        }
+
+        if ($query !== '') {
+            $path .= "?" . $query;
+        }
+
+        if ($fragment !== '') {
+            $path .= "#" . $fragment;
+        }
+
+        return $path;
     }
 
     public function withRequestTarget($requestTarget)
     {
-        // TODO: Implement withRequestTarget() method.
+        if (!is_string($requestTarget)) {
+            throw new InvalidArgumentException("Request target must be a string.");
+        }
+
+        if (str_contains($requestTarget, ' ')) {
+            throw new InvalidArgumentException("Request target cannot contain spaces.");
+        }
+
+        $url = Url::fromString($requestTarget);
+
+        return $this->request->withUrl($url);
     }
 
-    public function getMethod()
+    #[Pure] public function getMethod()
     {
         return $this->request->getRequestMethod()->getValue();
     }
@@ -40,13 +69,13 @@ class Request extends Message implements RequestInterface
         return $this->request->withRequestMethod($requestMethod);
     }
 
-    public function getUri()
+    #[Pure] public function getUri()
     {
-        return $this->request->getUrl();
+        return new Uri($this->request->getUrl());
     }
 
     public function withUri(UriInterface $uri, $preserveHost = false)
     {
-        // TODO: Implement withUri() method.
+        return $this->request->withUrl(Uri::toElephox($uri), $preserveHost);
     }
 }
