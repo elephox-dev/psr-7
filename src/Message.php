@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Elephox\Psr7;
 
-use Elephox\Http\Contract\HttpMessage as ElephoxMessage;
+use Elephox\Http\Contract\Message as ElephoxMessage;
 use Elephox\Http\HeaderMap;
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\StreamInterface;

@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace Elephox\Psr7;
 
-use Elephox\Http\Contract\Stream as ElephoxStream;
-use Elephox\Http\ResourceStream;
+use Elephox\Stream\Contract\Stream as ElephoxStream;
+use Elephox\Stream\ResourceStream;
 use Psr\Http\Message\StreamInterface as Psr7Stream;
 
 class Stream implements Psr7Stream

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01da114d88c184a397138a985e813d33",
+    "content-hash": "c1ee221abdd2e8e7d6295948619f1f11",
     "packages": [
         {
             "name": "elephox/collection",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elephox-dev/collection.git",
-                "reference": "7db6c56a51609cc996a7790aa3a5c8498404aa21"
+                "reference": "db43f8356aa9e756a934686f32c13bd12003656c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elephox-dev/collection/zipball/7db6c56a51609cc996a7790aa3a5c8498404aa21",
-                "reference": "7db6c56a51609cc996a7790aa3a5c8498404aa21",
+                "url": "https://api.github.com/repos/elephox-dev/collection/zipball/db43f8356aa9e756a934686f32c13bd12003656c",
+                "reference": "db43f8356aa9e756a934686f32c13bd12003656c",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,52 @@
             "support": {
                 "source": "https://github.com/elephox-dev/collection/tree/main"
             },
-            "time": "2021-12-09T15:45:36+00:00"
+            "time": "2021-12-13T16:54:24+00:00"
+        },
+        {
+            "name": "elephox/files",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elephox-dev/files.git",
+                "reference": "708ae585c5fad44cb779fe329eda1dc11b03716e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elephox-dev/files/zipball/708ae585c5fad44cb779fe329eda1dc11b03716e",
+                "reference": "708ae585c5fad44cb779fe329eda1dc11b03716e",
+                "shasum": ""
+            },
+            "require": {
+                "elephox/collection": "dev-main",
+                "elephox/stream": "dev-main",
+                "elephox/support": "dev-main",
+                "jetbrains/phpstorm-attributes": "^1.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Elephox\\Files\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ricaro Boss",
+                    "email": "contact@ricardoboss.de"
+                }
+            ],
+            "description": "Elephox files library.",
+            "support": {
+                "issues": "https://github.com/elephox-dev/files/issues",
+                "source": "https://github.com/elephox-dev/files/tree/main"
+            },
+            "time": "2021-12-13T16:54:24+00:00"
         },
         {
             "name": "elephox/http",
@@ -54,16 +99,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elephox-dev/http.git",
-                "reference": "052dc4618422d69bc09be4e14b300df26250a843"
+                "reference": "6b53fbfb156971215c5898bd8ef3f6742db458e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elephox-dev/http/zipball/052dc4618422d69bc09be4e14b300df26250a843",
-                "reference": "052dc4618422d69bc09be4e14b300df26250a843",
+                "url": "https://api.github.com/repos/elephox-dev/http/zipball/6b53fbfb156971215c5898bd8ef3f6742db458e6",
+                "reference": "6b53fbfb156971215c5898bd8ef3f6742db458e6",
                 "shasum": ""
             },
             "require": {
                 "elephox/collection": "dev-main",
+                "elephox/files": "dev-main",
+                "elephox/stream": "dev-main",
                 "elephox/support": "dev-main",
                 "elephox/text": "dev-main",
                 "ext-mbstring": "*",
@@ -91,7 +138,50 @@
             "support": {
                 "source": "https://github.com/elephox-dev/http/tree/main"
             },
-            "time": "2021-12-10T15:43:17+00:00"
+            "time": "2021-12-13T16:54:24+00:00"
+        },
+        {
+            "name": "elephox/stream",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elephox-dev/stream.git",
+                "reference": "67bf70b4775bee3e6a902d4a69189829cce2a5bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elephox-dev/stream/zipball/67bf70b4775bee3e6a902d4a69189829cce2a5bb",
+                "reference": "67bf70b4775bee3e6a902d4a69189829cce2a5bb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "jetbrains/phpstorm-attributes": "^1.0",
+                "php": ">=8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Elephox\\Stream\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ricaro Boss",
+                    "email": "contact@ricardoboss.de"
+                }
+            ],
+            "description": "Elephox Stream library.",
+            "support": {
+                "issues": "https://github.com/elephox-dev/stream/issues",
+                "source": "https://github.com/elephox-dev/stream/tree/main"
+            },
+            "time": "2021-12-13T16:54:24+00:00"
         },
         {
             "name": "elephox/support",
@@ -140,12 +230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elephox-dev/text.git",
-                "reference": "33f3fff9c6c440b414ee8cea38879476e4b916de"
+                "reference": "13a4f412f366f648b26ccffd7d37bebcb4373b54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elephox-dev/text/zipball/33f3fff9c6c440b414ee8cea38879476e4b916de",
-                "reference": "33f3fff9c6c440b414ee8cea38879476e4b916de",
+                "url": "https://api.github.com/repos/elephox-dev/text/zipball/13a4f412f366f648b26ccffd7d37bebcb4373b54",
+                "reference": "13a4f412f366f648b26ccffd7d37bebcb4373b54",
                 "shasum": ""
             },
             "require": {
@@ -174,7 +264,7 @@
                 "issues": "https://github.com/elephox-dev/text/issues",
                 "source": "https://github.com/elephox-dev/text/tree/main"
             },
-            "time": "2021-12-07T01:13:48+00:00"
+            "time": "2021-12-13T16:54:24+00:00"
         },
         {
             "name": "ergebnis/composer-normalize",
@@ -2714,7 +2804,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "elephox/http": 20
+        "elephox/http": 20,
+        "elephox/files": 20,
+        "elephox/stream": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

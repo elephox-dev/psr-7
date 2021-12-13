@@ -14,7 +14,6 @@ class Uri implements Psr7Uri
 {
     #[Pure] public static function toElephox(Psr7Uri $uri): ElephoxUrl
     {
-        $original = (string)$uri;
         $scheme = $uri->getScheme();
         [$username, $password] = explode(':', $uri->getUserInfo(), 2) + [1 => ''];
         $host = $uri->getHost();
@@ -24,7 +23,6 @@ class Uri implements Psr7Uri
         $fragment = $uri->getFragment();
 
         return new Url(
-            $original,
             empty($scheme) ? null : $scheme,
             empty($username) ? null : $username,
             empty($password) ? null : $password,
