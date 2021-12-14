@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Elephox\Psr7;
 
+use Elephox\Http\Contract\Cookie;
 use Elephox\Http\Contract\ServerRequest as ElephoxServerRequest;
+use Elephox\Http\Contract\UploadedFile as ElephoxUploadedFile;
 use JetBrains\PhpStorm\Pure;
 use Psr\Http\Message\ServerRequestInterface as Psr7ServerRequest;
 
@@ -17,12 +19,12 @@ class ServerRequest extends Request implements Psr7ServerRequest
 
     public function getServerParams()
     {
-        // TODO: Implement getServerParams() method.
+        return $this->serverRequest->getServerParamsMap()->asArray();
     }
 
     public function getCookieParams()
     {
-        // TODO: Implement getCookieParams() method.
+        return $this->serverRequest->getCookies()->map(fn (Cookie $cookie) => (string)$cookie)->asArray();
     }
 
     public function withCookieParams(array $cookies)
@@ -32,7 +34,7 @@ class ServerRequest extends Request implements Psr7ServerRequest
 
     public function getQueryParams()
     {
-        // TODO: Implement getQueryParams() method.
+        return $this->serverRequest->getUrl()->getQueryMap()->asArray();
     }
 
     public function withQueryParams(array $query)
@@ -42,7 +44,7 @@ class ServerRequest extends Request implements Psr7ServerRequest
 
     public function getUploadedFiles()
     {
-        // TODO: Implement getUploadedFiles() method.
+        return $this->serverRequest->getUploadedFiles()->map(fn(ElephoxUploadedFile $uploadedFile) => new UploadedFile($uploadedFile))->asArray();
     }
 
     public function withUploadedFiles(array $uploadedFiles)
@@ -52,7 +54,7 @@ class ServerRequest extends Request implements Psr7ServerRequest
 
     public function getParsedBody()
     {
-        // TODO: Implement getParsedBody() method.
+        return $this->serverRequest->getParsedBody();
     }
 
     public function withParsedBody($data)

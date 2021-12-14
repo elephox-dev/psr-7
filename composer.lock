@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elephox-dev/collection.git",
-                "reference": "db43f8356aa9e756a934686f32c13bd12003656c"
+                "reference": "e291ce636c2fc3c117318781ec03ea0648032e9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elephox-dev/collection/zipball/db43f8356aa9e756a934686f32c13bd12003656c",
-                "reference": "db43f8356aa9e756a934686f32c13bd12003656c",
+                "url": "https://api.github.com/repos/elephox-dev/collection/zipball/e291ce636c2fc3c117318781ec03ea0648032e9e",
+                "reference": "e291ce636c2fc3c117318781ec03ea0648032e9e",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
             "support": {
                 "source": "https://github.com/elephox-dev/collection/tree/main"
             },
-            "time": "2021-12-13T16:54:24+00:00"
+            "time": "2021-12-14T01:51:36+00:00"
         },
         {
             "name": "elephox/files",
@@ -54,12 +54,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elephox-dev/files.git",
-                "reference": "708ae585c5fad44cb779fe329eda1dc11b03716e"
+                "reference": "359bc42c051ad0aa89f6628bc95d30ce06301703"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elephox-dev/files/zipball/708ae585c5fad44cb779fe329eda1dc11b03716e",
-                "reference": "708ae585c5fad44cb779fe329eda1dc11b03716e",
+                "url": "https://api.github.com/repos/elephox-dev/files/zipball/359bc42c051ad0aa89f6628bc95d30ce06301703",
+                "reference": "359bc42c051ad0aa89f6628bc95d30ce06301703",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +91,7 @@
                 "issues": "https://github.com/elephox-dev/files/issues",
                 "source": "https://github.com/elephox-dev/files/tree/main"
             },
-            "time": "2021-12-13T16:54:24+00:00"
+            "time": "2021-12-13T23:08:33+00:00"
         },
         {
             "name": "elephox/http",
@@ -99,12 +99,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elephox-dev/http.git",
-                "reference": "6b53fbfb156971215c5898bd8ef3f6742db458e6"
+                "reference": "c2cc426cf8d5731f69d1ac255244925d09e62b21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elephox-dev/http/zipball/6b53fbfb156971215c5898bd8ef3f6742db458e6",
-                "reference": "6b53fbfb156971215c5898bd8ef3f6742db458e6",
+                "url": "https://api.github.com/repos/elephox-dev/http/zipball/c2cc426cf8d5731f69d1ac255244925d09e62b21",
+                "reference": "c2cc426cf8d5731f69d1ac255244925d09e62b21",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,7 @@
             "support": {
                 "source": "https://github.com/elephox-dev/http/tree/main"
             },
-            "time": "2021-12-13T16:54:24+00:00"
+            "time": "2021-12-14T16:11:23+00:00"
         },
         {
             "name": "elephox/stream",
@@ -189,12 +189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elephox-dev/support.git",
-                "reference": "1295a771e7fbe3b09a91e22b2fa8514c738155f4"
+                "reference": "f85a71af9ed06424c475cb1ed228868c1026aac1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elephox-dev/support/zipball/1295a771e7fbe3b09a91e22b2fa8514c738155f4",
-                "reference": "1295a771e7fbe3b09a91e22b2fa8514c738155f4",
+                "url": "https://api.github.com/repos/elephox-dev/support/zipball/f85a71af9ed06424c475cb1ed228868c1026aac1",
+                "reference": "f85a71af9ed06424c475cb1ed228868c1026aac1",
                 "shasum": ""
             },
             "require": {
@@ -222,7 +222,7 @@
             "support": {
                 "source": "https://github.com/elephox-dev/support/tree/main"
             },
-            "time": "2021-12-07T01:13:48+00:00"
+            "time": "2021-12-14T01:56:57+00:00"
         },
         {
             "name": "elephox/text",
