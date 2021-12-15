@@ -56,7 +56,7 @@ class Request extends Message implements Psr7Request
         return $this->request->withUrl($url);
     }
 
-    #[Pure] public function getMethod()
+    public function getMethod()
     {
         return $this->request->getRequestMethod()->getValue();
     }
